@@ -27,6 +27,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/**").permitAll()        // ✅ allow registration & login
                         .requestMatchers("/api/admin/**").hasRole("ADMIN") // ✅ secure admin endpoints
                         .requestMatchers("/api/players/**").hasRole("PLAYER")
+                        .requestMatchers("/api/coach/**").hasRole("COACH")
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
