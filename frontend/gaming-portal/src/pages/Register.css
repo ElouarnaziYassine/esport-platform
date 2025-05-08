@@ -1,0 +1,84 @@
+.register-page {
+    background-color: #0b0d14;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+  }
+  
+  .register-card {
+    background-color: #151823;
+    padding: 50px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 255, 145, 0.1);
+  }
+  
+  .register-card h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  
+  .register-card p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 30px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  input {
+    padding: 12px 16px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background-color: #0f1118;
+    color: white;
+    transition: 0.3s ease;
+  }
+  
+  input::placeholder {
+    color: #777;
+  }
+  
+  input:focus {
+    box-shadow: 0 0 0 2px #00ff91;
+  }
+  
+  button {
+    background-color: #00ff91;
+    color: black;
+    font-weight: bold;
+    padding: 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #00cc74;
+  }
+  
+  .login-cta {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #999;
+  }
+  
+  .login-cta a {
+    color: #00ff91;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  

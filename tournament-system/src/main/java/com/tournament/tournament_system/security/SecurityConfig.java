@@ -26,7 +26,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()        // ✅ allow registration & login
                         .requestMatchers("/api/admin/**").hasRole("ADMIN") // ✅ secure admin endpoints
+                        .requestMatchers("/api/players/*/profile").permitAll()
                         .requestMatchers("/api/players/**").hasRole("PLAYER")
+                        .requestMatchers("/api/coach/**").hasRole("COACH")
+                        .requestMatchers("/api/admin/bracket/**").hasRole("ADMIN")
+                        .requestMatchers("/api/teams/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

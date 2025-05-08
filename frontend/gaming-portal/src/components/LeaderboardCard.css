@@ -1,0 +1,47 @@
+.leaderboard-card {
+    background-color: #131628;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 30px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 6px;
+    width: 90%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .rank {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    width: 30px;
+  }
+  
+  .team-logo {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+  }
+  
+  .team-info h3 {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .team-info p {
+    margin: 2px 0 0;
+    font-size: 11px;
+    color: #ccc;
+  }
+  
+  .points {
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+  }
+  

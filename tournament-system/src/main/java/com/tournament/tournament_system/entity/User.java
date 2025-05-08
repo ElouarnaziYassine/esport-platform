@@ -18,5 +18,6 @@ public class User {
     private String username;
     private String email;
     private String password;
+    private String image; // URL or file name of profile picture
     private String role; // Use "PLAYER" or "ADMIN"
 }

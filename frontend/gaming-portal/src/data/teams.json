@@ -1,0 +1,11 @@
+[
+  { "name": "TEAM HERECTICS", "region": "EUROPE", "points": 2000, "logo": "heretics.png" },
+  { "name": "FNATIC", "region": "EUROPE", "points": 1950, "logo": "fnatic.png" },
+  { "name": "SENTINELS", "region": "EUROPE", "points": 1800, "logo": "sentinels.png" },
+  { "name": "G2 ESPORT", "region": "EUROPE", "points": 1869, "logo": "g2.png" },
+  { "name": "T1", "region": "EUROPE", "points": 1800, "logo": "t1.png" },
+  { "name": "LOUD", "region": "EUROPE", "points": 1699, "logo": "loud.png" },
+  { "name": "CLOUD 9", "region": "EUROPE", "points": 1600, "logo": "cloud9.png" },
+  { "name": "FURIA", "region": "EUROPE", "points": 1500, "logo": "furia.png" },
+  { "name": "NRG", "region": "EUROPE", "points": 1350, "logo": "nrg.png" }
+]

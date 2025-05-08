@@ -1,0 +1,116 @@
+.dominate-section {
+    background-color: #0b0d14;
+    padding: 80px 60px;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .dominate-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .dominate-left {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+  }
+  
+  .dominate-left h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  
+  .dominate-left p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #b3b3b3;
+    margin-bottom: 15px;
+  }
+  
+  .dominate-button {
+    background-color: transparent;
+    border: 1px solid #00ff91;
+    color: white;
+    padding: 10px 24px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+  }
+  
+  .dominate-button:hover {
+    background-color: #00ff91;
+    color: #000;
+  }
+  
+  /* Right side user cards */
+  .dominate-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 240px;
+  }
+  
+  .user-card {
+    background-color: #151823;
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04);
+  }
+  
+  .avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background-color: currentColor;
+  }
+  
+  .user-card.blue .avatar { color: #3b82f6; }
+  .user-card.purple .avatar { color: #8b5cf6; }
+  .user-card.green .avatar { color: #10b981; }
+  
+  .user-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .username {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .status-dots {
+    margin-top: 4px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 4px;
+  }
+  
+  .online { background-color: #00ff91; }
+  .playing { background-color: #3b82f6; }
+  
+  .headset {
+    font-size: 16px;
+    color: white;
+  }
+  
