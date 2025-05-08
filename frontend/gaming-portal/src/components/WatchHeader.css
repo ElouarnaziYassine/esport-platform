@@ -1,0 +1,31 @@
+.watch-header {
+    background-color: #0b0d14;
+    background-image: url('/assets/arena.jpg'); /* Use your desired image here */
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .header-overlay {
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+  }
+  
+  .header-overlay h1 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  
+  .header-overlay p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #ccc;
+  }
+  

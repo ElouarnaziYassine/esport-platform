@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  background-color: #0b0d14;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
