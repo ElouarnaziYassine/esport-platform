@@ -4,8 +4,10 @@ package com.tournament.tournament_system.controller;
 import com.tournament.tournament_system.entity.Player;
 import com.tournament.tournament_system.repository.PlayerRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Optional;
 
@@ -32,5 +34,7 @@ public class PlayerController {
             return ResponseEntity.ok(playerRepository.save(existing));
         }).orElse(ResponseEntity.notFound().build());
     }
+
+
 }
 
