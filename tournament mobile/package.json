@@ -1,0 +1,45 @@
+{
+  "name": "esport",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo/config": "^11.0.0",
+    "@expo/metro-runtime": "~5.0.4",
+    "@expo/vector-icons": "^14.1.0",
+    "@react-native-async-storage/async-storage": "2.1.2",
+    "@react-native-picker/picker": "^2.11.0",
+    "@react-navigation/drawer": "^7.3.11",
+    "@react-navigation/native": "^7.1.8",
+    "@react-navigation/native-stack": "^7.3.12",
+    "axios": "^1.9.0",
+    "esport": "file:",
+    "expo": "53.0.9",
+    "expo-app-loading": "^1.1.2",
+    "expo-camera": "~16.1.6",
+    "expo-font": "~13.3.1",
+    "expo-linear-gradient": "~14.1.4",
+    "expo-splash-screen": "~0.30.8",
+    "expo-status-bar": "~2.2.3",
+    "install": "^0.13.0",
+    "jwt-decode": "^4.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-native": "0.79.2",
+    "react-native-gesture-handler": "2.24.0",
+    "react-native-reanimated": "^3.17.5",
+    "react-native-safe-area-context": "^5.4.0",
+    "react-native-screens": "~4.10.0",
+    "react-native-web": "^0.20.0",
+    "expo-secure-store": "~14.2.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0"
+  },
+  "private": true
+}
