@@ -3,31 +3,44 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f5f5f5;
-  padding: 20px;
+  background-color: #050920;
+  padding: 2rem;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .profile-card {
-  background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  padding: 30px;
+  background-color: #080E30;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: 2.5rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 480px;
   text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .profile-header {
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
 .profile-pic-container {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  margin: 0 auto 20px;
+  margin: 0 auto 1.5rem;
   overflow: hidden;
-  border: 4px solid #4caf50;
+  border: 5px solid #121C4D;
+  box-shadow: 0 4px 20px rgba(76, 175, 80, 0.15);
+  transition: all 0.3s ease;
+  background-color: #0D1540;
+}
+
+.profile-pic-container:hover {
+  transform: scale(1.03);
+  border-color: #1A2B6B;
+  box-shadow: 0 6px 24px rgba(76, 175, 80, 0.25);
 }
 
 .profile-pic {
@@ -37,57 +50,163 @@
 }
 
 .profile-info {
-  color: #333;
+  color: #E0E0E0;
+  text-align: left;
 }
 
 .profile-username {
-  font-size: 28px;
-  font-weight: bold;
-  color: #333;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
 }
 
-.profile-gamertag,
-.profile-gameid {
-  font-size: 14px;
-  color: #666;
-  margin: 8px 0;
+.profile-field {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.75rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.profile-rating {
-  font-size: 16px;
-  color: #4caf50;
-  font-weight: bold;
+.field-label {
+  font-weight: 500;
+  color: #8A94B8;
+  font-size: 0.9rem;
+}
+
+.field-value {
+  font-weight: 500;
+  color: #D6E0FF;
 }
 
 .profile-footer {
-  margin-top: 20px;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-edit, .btn-save, .btn-cancel {
-  background-color: #4caf50;
-  color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
 }
 
-.btn-edit:hover, .btn-save:hover, .btn-cancel:hover {
-  background-color: #388e3c;
+.btn-edit, .btn-save {
+  background-color: #4CAF50;
+  color: white;
+  box-shadow: 0 4px 16px rgba(76, 175, 80, 0.25);
+}
+
+.btn-cancel {
+  background-color: #1A2B6B;
+  color: #B8C2EC;
+  margin-left: 1rem;
+}
+
+.btn-edit:hover, .btn-save:hover {
+  background-color: #43A047;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.35);
+}
+
+.btn-cancel:hover {
+  background-color: #243A7D;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.edit-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #8A94B8;
+  font-size: 0.9rem;
 }
 
 .profile-input {
-  background-color: #f1f1f1;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  margin: 10px 0;
+  background-color: #121C4D;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   width: 100%;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  color: #FFFFFF;
+}
+
+.profile-input:disabled {
+  background-color: #0D1540;
+  color: #7A85B0;
 }
 
 .profile-input:focus {
   outline: none;
-  border-color: #4caf50;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
+  background-color: #0D1540;
+}
+
+.input-hint {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #6A7499;
+}
+
+.error-message {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background-color: rgba(198, 40, 40, 0.15);
+  color: #FF8A80;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-align: left;
+  border: 1px solid rgba(198, 40, 40, 0.3);
+}
+
+.loading {
+  font-size: 1rem;
+  color: #8A94B8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+@media (max-width: 576px) {
+  .profile-card {
+    padding: 1.5rem;
+  }
+  
+  .profile-pic-container {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .edit-buttons {
+    flex-direction: column;
+  }
+  
+  .btn-cancel {
+    margin-left: 0;
+    margin-top: 0.75rem;
+  }
 }

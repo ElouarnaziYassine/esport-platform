@@ -1,95 +1,279 @@
 .team-management {
-    margin-left: 250px;
-    padding: 40px;
-    background-color: #f7faff;
-    color: #333;
-  }
-  
-  .btn-create {
-    padding: 12px 24px;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: #1f78d1;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    display: inline-block;
-  }
-  
-  .btn-create:hover {
-    background-color: #155ba1;
-  }
-  
-  .form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .form-input {
-    padding: 12px;
-    margin: 10px 0;
-    background-color: #ffffff;
-    color: #333;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-  }
-  
-  .btn-save {
-    padding: 12px 24px;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: #00ff91;
-    color: black;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .btn-save:hover {
-    background-color: #00cc74;
+  padding: 1rem;
+  margin-left: 40px; /* Match sidebar width */
+  max-width: 1600px;
+  background-color: transparent;
+}
+
+.team-management h2 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-management h2::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 28px;
+  background: #1a73e8;
+  border-radius: 3px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.search-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.btn-create {
+  padding: 0.75rem 1.5rem;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-create:hover {
+  background-color: #1557b0;
+  transform: translateY(-1px);
+}
+
+/* Table */
+.team-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.team-table th {
+  background-color: #f8f9fa;
+  color: #495057;
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+.modal-content p{
+  color: black;
+}
+
+.team-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  color: #495057;
+  vertical-align: middle;
+}
+
+.team-table tr:last-child td {
+  border-bottom: none;
+}
+
+.team-table tr:hover td {
+  background-color: #f8f9fa;
+}
+
+/* Team Logo */
+.team-logoo {
+  width: 10% !important;
+  height: 10% !important;
+  object-fit: cover;
+  max-width: 500px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  border: 2px solid #e2e8f0;
+  transition: transform 0.2s;
+}
+
+.team-logo:hover {
+  transform: scale(1.1);
+}
+
+.team-logo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e2e8f0;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 50rem;
+}
+
+.status-active {
+  color: #198754;
+  background-color: #d1e7dd;
+}
+
+.status-inactive {
+  color: #6c757d;
+  background-color: #e2e3e5;
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-view {
+  background-color: #0dcaf0;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Form Styles */
+.form-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.25);
+}
+
+.btn-save {
+  background-color: #198754;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #157347;
+}
+
+/* File Upload */
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.file-upload-preview {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px dashed #dee2e6;
+  padding: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-management {
+    margin-left: 0;
+    padding: 1rem;
   }
   
   .team-table {
-    width: 100%;
-    border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
   }
   
-  .team-table th, .team-table td {
-    padding: 12px;
-    text-align: center;
-    background-color: #ffffff;
+  .controls {
+    flex-direction: column;
   }
   
-  .team-table th {
-    background-color: #1f78d1;
-    color: white;
+  .search-input {
+    max-width: 100%;
   }
-  
-  .team-table td {
-    background-color: #f1faff;
-  }
-  
-  .team-table button {
-    padding: 6px 12px;
-    background-color: #00ff91;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 6px;
-    margin-right: 5px;
-  }
-  
-  .team-table button:hover {
-    background-color: #00cc74;
-  }
-  .team-logo {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    border-radius: 50%;
-    background-color: #f5f5f5;
-  }
+}

@@ -5,6 +5,11 @@
   margin: 0 auto;
 }
 
+.live-matches h2{
+text-align: center;
+line-height: 100px;
+font-size: 35px;}
+
 .match-container {
   display: flex;
   align-items: center;

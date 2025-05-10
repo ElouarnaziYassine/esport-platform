@@ -52,7 +52,6 @@ function Navbar() {
         <li><Link to="/tournament">TOURNAMENTS</Link></li>
         <li><Link to="/leaderboard">LEADERBOARD</Link></li>
         <li><Link to="/watch">WATCH</Link></li>
-        <li><Link to="/support">SUPPORT</Link></li>
       </ul>
       <div className="navbar-auth">
         {!isLoggedIn ? (

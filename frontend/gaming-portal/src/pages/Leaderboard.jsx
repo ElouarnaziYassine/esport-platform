@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import Hero from '../components/Hero';
+import LeaderboardHeader from '../components/LeaderboardHeader';
 import FilterBar from '../components/FilterBar';
 import LeaderboardList from '../components/LeaderboardList';
 
@@ -9,7 +9,7 @@ function Leaderboard() {
   return (
     <>
       <Navbar />
-      <Hero/>
+      <LeaderboardHeader />
       <FilterBar />
       <LeaderboardList />
       <Footer />

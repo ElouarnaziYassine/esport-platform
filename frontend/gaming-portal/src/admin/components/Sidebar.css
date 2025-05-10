@@ -1,41 +1,66 @@
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: #e0f4ff;
-    color: #333;
-    padding-top: 20px;
-    position: fixed;
-  }
-  
-  .sidebar-header {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #1f78d1;
-  }
-  
-  .sidebar-links {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar-links li {
-    padding: 15px;
-    text-align: center;
-  }
-  
-  .sidebar-links li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    display: block;
-    font-weight: 600;
-  }
-  
-  .sidebar-links li a:hover {
-    background-color: #1f78d1;
-    color: white;
-    border-radius: 4px;
-  }
-  
+  width: 280px;
+  height: 100vh;
+  background-color: #ffffff;
+  color: #333;
+  position: fixed;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  border-right: 1px solid #eaeaea;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.sidebar-header {
+  padding: 25px 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sidebar-header h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 15px 20px;
+}
+
+.sidebar-links li {
+  margin-bottom: 8px;
+}
+
+.sidebar-links li a {
+  text-decoration: none;
+  color: #555;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.sidebar-links li a:hover {
+  background-color: #f0f7ff;
+  color: #1a73e8;
+}
+
+.sidebar-links li a.active {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  font-weight: 600;
+}
+
+/* Add icons (using Material Icons - you'll need to include the font) */
+.material-icons {
+  font-size: 1.3rem;
+}
