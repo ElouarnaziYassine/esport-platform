@@ -11,7 +11,12 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")  // Allow all API endpoints to be accessed
-                .allowedOrigins("http://localhost:5173")  // Allow requests from React frontend
+                .allowedOrigins(
+                        "http://localhost:5173",   // Allow React frontend URL
+                        "http://localhost:8081",
+                        "exp://192.168.1.2:19000",
+                        "exp://192.168.1.2:8081"// Allow Expo development URL
+                )
                 .allowedMethods("GET", "POST", "PUT", "DELETE")  // Allow specific methods
                 .allowedHeaders("*")  // Allow all headers
                 .allowCredentials(true);  // Allow sending cookies (if needed)

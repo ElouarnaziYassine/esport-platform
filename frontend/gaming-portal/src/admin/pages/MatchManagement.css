@@ -1,0 +1,72 @@
+.match-management {
+    margin-left: 250px;
+    padding: 40px;
+    background-color: #f7faff;
+    color: #333;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .form-input {
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .btn-save {
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #00ff91;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .btn-save:hover {
+    background-color: #00cc74;
+  }
+  
+  .match-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .match-table th, .match-table td {
+    padding: 12px;
+    text-align: center;
+    background-color: #ffffff;
+  }
+  
+  .match-table th {
+    background-color: #1f78d1;
+    color: white;
+  }
+  
+  .match-table td {
+    background-color: #f1faff;
+  }
+  
+  .match-table button {
+    padding: 6px 12px;
+    background-color: #00ff91;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-right: 5px;
+  }
+  
+  .match-table button:hover {
+    background-color: #00cc74;
+  }
+  

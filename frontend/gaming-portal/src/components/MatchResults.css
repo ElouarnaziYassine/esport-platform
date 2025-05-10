@@ -1,0 +1,48 @@
+/* MatchResults.css */
+.match-results-container {
+  padding: 20px;
+}
+
+.match-result-card {
+  background-color: #f1f1f1;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.match-result-card .match-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.match-result-card .match-info .team-name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.match-result-card .match-info .team-score {
+  font-size: 18px;
+}
+
+.match-result-card input {
+  padding: 8px;
+  font-size: 16px;
+  width: 100px;
+  margin: 5px 0;
+}
+
+.match-result-card .submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.match-result-card .submit-btn:hover {
+  background-color: #45a049;
+}

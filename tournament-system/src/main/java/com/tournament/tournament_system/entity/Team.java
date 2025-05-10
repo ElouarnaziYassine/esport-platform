@@ -28,7 +28,10 @@ public class Team {
             inverseJoinColumns = @JoinColumn(name = "player_id")
     )
     private List<User> players;
+
     private String logo;   // URL or image name
     private String region; // e.g. "EU", "NA", etc.
+
+    private Double rating; // New field to store team rating
 
 }

@@ -8,7 +8,9 @@ import com.tournament.tournament_system.entity.Tournament;
 import com.tournament.tournament_system.entity.TournamentTeam;
 import com.tournament.tournament_system.repository.TournamentRepository;
 import com.tournament.tournament_system.repository.TournamentTeamRepository;
+import com.tournament.tournament_system.service.TournamentService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +23,8 @@ public class TournamentAdminController {
 
     private final TournamentTeamRepository tournamentTeamRepository;
     private final TournamentRepository tournamentRepository;
+    private final TournamentService tournamentService;
+
 
     @GetMapping("/{tournamentId}/teams")
     public ResponseEntity<?> getTeamsForTournament(@PathVariable Integer tournamentId) {
@@ -61,6 +65,15 @@ public class TournamentAdminController {
         return ResponseEntity.ok("Team removed from tournament.");
     }
 
+    @PostMapping("/{tournamentId}/generate-bracket")
+    public ResponseEntity<?> generateBracket(@PathVariable Integer tournamentId) {
+        try {
+            tournamentService.generateBracketForTournament(tournamentId);
+            return ResponseEntity.ok("Bracket generated successfully.");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
 
 
 

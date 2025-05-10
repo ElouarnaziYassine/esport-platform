@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -17,6 +18,12 @@ import java.util.Optional;
 public class PlayerController {
 
     private final PlayerRepository playerRepository;
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Player>> getAllPlayers() {
+        List<Player> players = playerRepository.findAll();
+        return ResponseEntity.ok(players);
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Player> getPlayer(@PathVariable Integer id) {

@@ -45,15 +45,27 @@ public class TeamTournamentController {
         Tournament tournament = tournamentRepository.findById(tournamentId)
                 .orElseThrow(() -> new RuntimeException("Tournament not found"));
 
+        // Check if tournament has space for more teams (8 max)
+        if (!tournament.canRegisterTeam()) {
+            return ResponseEntity.status(400).body("This tournament has already reached its team limit (8 teams).");
+        }
+
+        // Check if the team is already registered
         if (tournamentTeamRepository.existsByTournamentIdAndTeamId(tournamentId, teamId)) {
             return ResponseEntity.badRequest().body("Team already registered to this tournament.");
         }
 
+        // Register the team
         TournamentTeam registration = new TournamentTeam();
         registration.setTeam(team);
         registration.setTournament(tournament);
         registration.setRegisteredAt(LocalDate.now());
 
+        // Update the tournament's registered teams count
+        tournament.increaseRegisteredTeams();
+        tournamentRepository.save(tournament);  // Save the updated tournament
+
         return ResponseEntity.ok(tournamentTeamRepository.save(registration));
     }
+
 }

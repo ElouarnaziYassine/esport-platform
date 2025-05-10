@@ -6,6 +6,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "tournament_match")  // Custom table name to avoid conflict with MySQL's reserved keyword 'match'
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,14 +17,15 @@ public class Match {
     private Integer id;
 
     @ManyToOne
+    @JoinColumn(name = "tournament_id", referencedColumnName = "id") // Link to Tournament entity
     private Tournament tournament;
 
     @ManyToOne
-    @JoinColumn(name = "team_a_id")
+    @JoinColumn(name = "team_a_id", referencedColumnName = "id") // Link to Team A
     private Team teamA;
 
     @ManyToOne
-    @JoinColumn(name = "team_b_id")
+    @JoinColumn(name = "team_b_id", referencedColumnName = "id") // Link to Team B
     private Team teamB;
 
     private LocalDateTime scheduledAt;
@@ -41,6 +43,5 @@ public class Match {
     }
 
     private Integer roundNumber; // 1 = QF, 2 = SF, 3 = Final
-    private Boolean isBracketMatch; // distinguish from friendly matches
-
+    private Boolean isBracketMatch; // To distinguish from friendly matches
 }

@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface MatchRepository extends JpaRepository<Match, Integer> {
     List<Match> findByTournamentId(Integer tournamentId);
+    List<Match> findByTournamentIdAndIsBracketMatch(Integer tournamentId, Boolean isBracketMatch);
+
 }

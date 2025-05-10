@@ -1,0 +1,46 @@
+/* src/components/TournamentForm.css */
+
+.tournament-form {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tournament-form h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .tournament-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tournament-form input,
+  .tournament-form select,
+  .tournament-form button {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+  }
+  
+  .tournament-form button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .tournament-form button:hover {
+    background-color: #45a049;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+  

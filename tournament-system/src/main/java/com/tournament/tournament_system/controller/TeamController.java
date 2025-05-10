@@ -32,7 +32,6 @@ public class TeamController {
         User coach = userRepository.findByUsername(userDetails.getUsername())
                 .orElseThrow(() -> new RuntimeException("Coach not found"));
 
-
         if (!"COACH".equalsIgnoreCase(coach.getRole())) {
             return ResponseEntity.status(403).body("Only users with role COACH can create teams.");
         }
@@ -60,7 +59,6 @@ public class TeamController {
 
         return teamRepository.findById(id)
                 .map(team -> {
-                    // Only the coach who owns the team can view it (or extend to allow ADMIN later)
                     if (!team.getCoach().getId().equals(coach.getId())) {
                         return ResponseEntity.status(403).body("You are not allowed to view this team.");
                     }
@@ -69,6 +67,41 @@ public class TeamController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    // 🔹 3. Get all teams created by the logged-in coach (coach can only have one team)
+    @GetMapping
+    public ResponseEntity<?> getAllTeams(@AuthenticationPrincipal UserDetails userDetails) {
+        User coach = userRepository.findByUsername(userDetails.getUsername())
+                .orElseThrow(() -> new RuntimeException("Coach not found"));
 
+        // Fetch teams created by the logged-in coach
+        List<Team> teams = teamRepository.findByCoachId(coach.getId());
 
+        if (teams.isEmpty()) {
+            return ResponseEntity.status(404).body("No teams found for this coach.");
+        }
+
+        return ResponseEntity.ok(teams);
+    }
+
+    // 🔹 Delete a team
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteTeam(@PathVariable Integer id,
+                                        @AuthenticationPrincipal UserDetails userDetails) {
+
+        User coach = userRepository.findByUsername(userDetails.getUsername())
+                .orElseThrow(() -> new RuntimeException("Coach not found"));
+
+        return teamRepository.findById(id)
+                .map(team -> {
+                    // Check if the team belongs to the logged-in coach
+                    if (!team.getCoach().getId().equals(coach.getId())) {
+                        return ResponseEntity.status(403).body("You are not allowed to delete this team.");
+                    }
+
+                    // Delete the team
+                    teamRepository.delete(team);
+                    return ResponseEntity.ok("Team successfully deleted");
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
 }
