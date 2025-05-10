@@ -22,11 +22,23 @@ public class Tournament {
 
     @Enumerated(EnumType.STRING)
     private Status status;
+    private String logo;   // URL or image name
+
+    private int maxTeams = 8;  // Set max teams to 8
+    private int registeredTeams = 0;  // Number of teams currently registered
 
     public enum Status {
         UPCOMING,
         ONGOING,
         COMPLETED,
         CANCELLED
+    }
+
+    public boolean canRegisterTeam() {
+        return registeredTeams < maxTeams;  // Check if there's space for more teams
+    }
+
+    public void increaseRegisteredTeams() {
+        this.registeredTeams++;
     }
 }

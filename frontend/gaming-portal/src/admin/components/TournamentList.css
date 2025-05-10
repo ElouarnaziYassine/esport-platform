@@ -1,0 +1,49 @@
+.tournament-list {
+    padding: 2rem;
+  }
+  
+  .tournament-list h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .tournament-list table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tournament-list th, .tournament-list td {
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  .tournament-list th {
+    background-color: #f4f4f8;
+  }
+  
+  .tournament-list tr:nth-child(even) {
+    background-color: #f9f9fb;
+  }
+  
+  .tournament-list tr:hover {
+    background-color: #eef1f8;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .btn-create {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.25rem;
+  }
+  
+  .btn-create:hover {
+    background-color: #45a049;
+  }
+  

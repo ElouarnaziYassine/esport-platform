@@ -1,0 +1,33 @@
+/* components/Tournaments.css */
+.tournaments-container {
+  padding: 20px;
+  background-color: #121212;
+  color: #fff;
+}
+
+.tournaments-container h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.filters select {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.tournament-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

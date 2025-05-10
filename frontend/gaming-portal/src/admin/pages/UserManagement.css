@@ -1,0 +1,75 @@
+.user-management {
+    margin-left: 250px;
+    padding: 40px;
+    color: white;
+  }
+  
+  .search-bar {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    background-color: #1a1d29;
+    color: white;
+    border: none;
+    border-radius: 6px;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-table th, .user-table td {
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .user-table th {
+    background-color: #1f78d1;
+    color: white;
+  }
+  
+  .user-table td {
+    background-color: #131828;
+  }
+  
+  .user-table button {
+    padding: 6px 12px;
+    background-color: #00ff91;
+    border: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-right: 5px;
+  }
+  
+  .user-table button:hover {
+    background-color: #00cc74;
+  }
+  
+  /* src/components/UserManagement.css */
+.user-management {
+    padding: 20px;
+  }
+  
+  .user-management table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-management th,
+  .user-management td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+  }
+  
+  .user-management th {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  

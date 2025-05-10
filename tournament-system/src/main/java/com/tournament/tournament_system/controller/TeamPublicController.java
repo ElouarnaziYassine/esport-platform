@@ -1,6 +1,7 @@
 package com.tournament.tournament_system.controller;
 
 import com.tournament.tournament_system.dto.TeamProfileResponse;
+import com.tournament.tournament_system.entity.Team;
 import com.tournament.tournament_system.repository.TeamRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -45,6 +46,14 @@ public class TeamPublicController {
                     return ResponseEntity.ok(dto);
                 })
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    // New endpoint to get all teams sorted by rating
+    @GetMapping("/leaderboard")
+    public ResponseEntity<List<Team>> getLeaderboard() {
+        // Fetch all teams ordered by rating in descending order
+        List<Team> leaderboard = teamRepository.findAllByOrderByRatingDesc();
+        return ResponseEntity.ok(leaderboard);
     }
 
 }

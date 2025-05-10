@@ -24,12 +24,14 @@ public class SecurityConfig {
         return http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/matches/bracket/**").permitAll() // i edited here but still
+                        .requestMatchers("/api/coach/**").hasAnyRole("ADMIN", "COACH")
+                        .requestMatchers("/api/admin/tournaments").permitAll()
                         .requestMatchers("/api/auth/**").permitAll()        // ✅ allow registration & login
                         .requestMatchers("/api/admin/**").hasRole("ADMIN") // ✅ secure admin endpoints
                         .requestMatchers("/api/players/*/profile").permitAll()
-                        .requestMatchers("/api/players/**").hasRole("PLAYER")
-                        .requestMatchers("/api/coach/**").hasRole("COACH")
-                        .requestMatchers("/api/admin/bracket/**").hasRole("ADMIN")
+                        .requestMatchers("/api/players/**").permitAll()
+                        .requestMatchers("/api/admin/bracket/**").hasAnyRole("ADMIN", "COACH")
                         .requestMatchers("/api/teams/**").permitAll()
                         .anyRequest().authenticated()
                 )

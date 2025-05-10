@@ -1,0 +1,51 @@
+.admin-tournaments-page {
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.tournament-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.tournament-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  width: 300px;
+  border-radius: 8px;
+  background-color: black;
+}
+
+.tournament-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.tournament-card p {
+  margin: 5px 0;
+}
+
+.tournament-card ul {
+  padding-left: 20px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}

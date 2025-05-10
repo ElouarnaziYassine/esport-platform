@@ -1,0 +1,201 @@
+/* Base Styles */
+.esports-bracket-container {
+  font-family: 'Roboto', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #fff;
+  background-color: #0f0f1a;
+}
+
+.bracket-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #2a2a3a;
+}
+
+.tournament-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Bracket Grid Layout */
+.bracket-grid {
+  display: flex;
+  justify-content: space-between;
+  min-height: 600px;
+}
+
+.round {
+  flex: 1;
+  position: relative;
+  padding: 0 15px;
+}
+
+.round:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50px;
+  height: calc(100% - 100px);
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #3a7bd5, transparent);
+}
+
+.round-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.round-header h2 {
+  font-size: 1.2rem;
+  color: #a0a0c0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 8px 15px;
+  background-color: #1a1a2a;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.matches-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Match Card Styles */
+.match-card {
+  background-color: #1a1a2a;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.match-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.match-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #00d2ff, #3a7bd5);
+}
+
+.match-time {
+  font-size: 0.8rem;
+  color: #a0a0c0;
+  margin-bottom: 10px;
+}
+
+.teams-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #252538;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.team.winner {
+  background-color: rgba(58, 123, 213, 0.2);
+  border-left: 2px solid #3a7bd5;
+}
+
+.team-name {
+  font-weight: 500;
+}
+
+.team-score {
+  font-weight: 700;
+  color: #00d2ff;
+}
+
+.match-status {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.match-status.completed {
+  color: #4caf50;
+}
+
+.match-status.scheduled {
+  color: #ff9800;
+}
+
+.match-status.in_progress {
+  color: #00d2ff;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Loading Animation */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(58, 123, 213, 0.2);
+  border-radius: 50%;
+  border-top-color: #3a7bd5;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .bracket-grid {
+    flex-direction: column;
+  }
+  
+  .round {
+    margin-bottom: 30px;
+  }
+  
+  .round:not(:last-child)::after {
+    display: none;
+  }
+}

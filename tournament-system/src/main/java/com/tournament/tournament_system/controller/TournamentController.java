@@ -4,6 +4,7 @@ import com.tournament.tournament_system.entity.Tournament;
 import com.tournament.tournament_system.repository.TournamentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,27 +14,21 @@ public class TournamentController {
 
     private final TournamentRepository tournamentRepository;
 
-    // Create Tournament
-    @PostMapping
-    public ResponseEntity<Tournament> createTournament(@RequestBody Tournament tournament) {
-        return ResponseEntity.ok(tournamentRepository.save(tournament));
-    }
-
-    // Get All Tournaments
+    // GET - Available to everyone
     @GetMapping
     public ResponseEntity<?> getAllTournaments() {
         return ResponseEntity.ok(tournamentRepository.findAll());
     }
 
-    // Get a single tournament by id
-    @GetMapping("/{id}")
-    public ResponseEntity<?> getTournamentById(@PathVariable Integer id) {
-        return tournamentRepository.findById(id)
-                .map(tournament -> ResponseEntity.ok(tournament))
-                .orElse(ResponseEntity.notFound().build());
+    // POST - Admin Only
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping
+    public ResponseEntity<Tournament> createTournament(@RequestBody Tournament tournament) {
+        return ResponseEntity.ok(tournamentRepository.save(tournament));
     }
 
-    // Update an existing tournament (Edit)
+    // PUT - Admin Only
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<Tournament> updateTournament(@PathVariable Integer id, @RequestBody Tournament updatedTournament) {
         return tournamentRepository.findById(id)
@@ -43,14 +38,14 @@ public class TournamentController {
                     tournament.setStartDate(updatedTournament.getStartDate());
                     tournament.setEndDate(updatedTournament.getEndDate());
                     tournament.setStatus(updatedTournament.getStatus());
-                    // Save the updated tournament
                     Tournament savedTournament = tournamentRepository.save(tournament);
                     return ResponseEntity.ok(savedTournament);
                 })
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // Delete a tournament
+    // DELETE - Admin Only
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deleteTournament(@PathVariable Integer id) {
         return tournamentRepository.findById(id)
