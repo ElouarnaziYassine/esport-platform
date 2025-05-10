@@ -1,0 +1,171 @@
+/* Shared Styles */
+.prediction-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #555;
+}
+
+/* First Popup Design */
+.prediction-popup {
+  position: relative;
+  width: 350px;
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.prediction-title {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 22px;
+}
+
+.teams-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.team-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #444;
+}
+
+.vs-text {
+  color: #888;
+  font-weight: 500;
+}
+
+.prediction-result {
+  margin: 25px 0;
+}
+
+.winner-badge {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.probability-meter {
+  height: 30px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.probability-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+  border-radius: 15px;
+  transition: width 0.5s ease;
+}
+
+.probability-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.confidence-text {
+  color: #666;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Second Popup Design */
+.simple-prediction-popup {
+  position: relative;
+  width: 300px;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+.prediction-header {
+  margin: 0 0 15px 0;
+  color: #555;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.winner-display {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2E7D32;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.probability-tag {
+  background: #E8F5E9;
+  color: #2E7D32;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.probability-bar {
+  height: 6px;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.probability-indicator {
+  height: 100%;
+  background: linear-gradient(90deg, #2E7D32, #4CAF50);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.confidence-level {
+  color: #666;
+  font-size: 13px;
+  font-style: italic;
+}
