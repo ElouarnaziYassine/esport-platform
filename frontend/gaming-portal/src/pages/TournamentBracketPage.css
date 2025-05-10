@@ -24,6 +24,7 @@
   background-clip: text;
   color: transparent;
   margin: 0;
+  align-items: center;
   text-transform: uppercase;
 }
 

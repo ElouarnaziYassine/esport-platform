@@ -75,7 +75,7 @@ function TeamManagement() {
                 <img 
                     src={team.logo || '/assets/default-logo.png'} 
                     alt={`${team.name} logo`} 
-                    className="team-logo" 
+                    className="team-logoo" 
                     onError={(e) => {
                         e.target.onerror = null; // prevents infinite loop if default image fails
                         e.target.src = '/assets/default-logo.png';

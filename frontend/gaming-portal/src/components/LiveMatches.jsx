@@ -62,7 +62,6 @@ function LiveMatches() {
   return (
     <div className="live-matches">
       <h2>Tournament Bracket</h2>
-      <p>Ready for the challenge?</p>
 
       {/* Detailed Prediction Popup */}
       {showPopup && currentPrediction && (

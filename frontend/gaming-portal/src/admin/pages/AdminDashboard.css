@@ -1,10 +1,121 @@
 .admin-dashboard {
-    display: flex;
+  margin-left: 80px; /* Match sidebar width */
+  margin-top: 240px;
+}
+
+.admin-dashboard h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: -200px;
+}
+
+.admin-dashboard h2::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 28px;
+  background: #1a73e8;
+  border-radius: 3px;
+}
+
+.dashboard-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 5rem;
+  margin-bottom: 2rem;
+  margin-right: 100px;
+
+}
+
+.overview-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.overview-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border-color: #e2e8f0;
+}
+
+.overview-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #1a73e8, #0ea5e9);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.card-title {
+  font-size: 0.8125rem;
+  color: #64748b;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f9ff;
+  color: #1a73e8;
+  font-size: 1.25rem;
+}
+
+.card-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  font-feature-settings: 'tnum';
+}
+
+.card-change {
+  font-size: 0.8125rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.card-change.positive {
+  color: #10b981;
+}
+
+.card-change.negative {
+  color: #ef4444;
+}
+
+/* Minimal responsive adjustment */
+@media (max-width: 768px) {
+  .dashboard-overview {
+    grid-template-columns: 1fr;
   }
   
-  .admin-content {
-    margin-left: 250px;
-    width: 100%;
-    padding: 40px;
+  .admin-dashboard {
+    margin-left: 0;
+    padding: 1.5rem;
   }
-  
+}

@@ -3,6 +3,9 @@ import axios from 'axios';
 import TournamentCard from '../components/TournamentCard';
 import './Tournaments.css';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import TourniHeader from '../components/TourniHeader';
+
 
 const Tournaments = () => {
   const [tournaments, setTournaments] = useState([]);
@@ -49,8 +52,9 @@ const Tournaments = () => {
   };
 
   return (
-    <>
+    <><>
       <Navbar />
+      <TourniHeader />
       <div className="tournaments-container">
         <h1>Tournaments</h1>
         {error && <p className="error-message">{error}</p>} {/* Show error message if any */}
@@ -76,16 +80,15 @@ const Tournaments = () => {
             filteredTournaments.map((tournament) => (
               <TournamentCard
                 key={tournament.id}
-                tournament={tournament}  // Pass the whole tournament object
-                imageUrl={tournament.imageUrl}
-              />
+                tournament={tournament} // Pass the whole tournament object
+                imageUrl={tournament.imageUrl} />
             ))
           ) : (
             <p>No tournaments available at the moment.</p>
           )}
         </div>
       </div>
-    </>
+    </><Footer /></>
   );
 };
 
