@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './TeamCoachManagement.css';
 import Navbar from '../../components/Navbar';
-import { FaEdit, FaTrash, FaUserCog, FaUsers, FaArrowDown, FaArrowUp, FaSave, FaTimesCircle } from 'react-icons/fa';
+import { FaEgg, FaTrash, FaUserCog, FaUsers, FaArrowDown, FaArrowUp, FaSave, FaTimesCircle } from 'react-icons/fa';
 
 const API_URL = 'http://localhost:8080/api/coach/teams';
 
@@ -378,7 +378,7 @@ function TeamManagement() {
                           title="Edit Team"
                           onClick={(e) => handleEditClick(e, team)}
                         >
-                          <FaEdit />
+                          <FaEgg />Edit
                         </button>
                         <button 
                           className="btn-delete" 
